@@ -8,6 +8,7 @@ Entregues de l'sprint 2 del curs de Node.js de Barcelona Activa. MySQL i MongoDB
   - Nivell 1, exercici 2: Pizzeria
   - Nivell 2: Youtube
   - Nivell 3: Spotify
+- Entrega 2: MySQL queries
 
 ## Entrega 1: Estructura de Dades - MySQL
 
