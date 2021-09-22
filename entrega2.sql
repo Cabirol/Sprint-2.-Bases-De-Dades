@@ -39,13 +39,12 @@ SELECT * FROM tienda.fabricante LIMIT 3, 2;
 -- Llista el nom del producte més barat del fabricant Hewlett-Packard.
 -- Retorna tots els productes de la base de dades que tenen un preu major o igual al producte més car del fabricador Lenovo.
 -- Llesta tots els productes del fabricador Asus que tenen un preu superior al preu mitjà de tots els seus productes.
-SELECT DISTINCT nombre, apellido1, apellido2 FROM universidad.persona JOIN universidad.alumno_se_matricula_asignatura ON id=id_alumno ORDER BY nombre, apellido1, apellido2;
-SELECT nombre, apellido1, apellido2 FROM universidad.persona JOIN universidad.alumno_se_matricula_asignatura WHERE id=id_alumno;
-SELECT nombre, apellido1, apellido2 -- Esbrina el nom i els dos cognoms dels alumnes que no han donat d'alta el seu número de telèfon en la base de dades.
--- Retorna el llistat dels alumnes que van néixer en 1999.
--- Retorna el llistat de professors que no han donat d'alta el seu número de telèfon en la base de dades i a més la seva nif acaba en K.
--- Retorna el llistat de les assignatures que s'imparteixen en el primer quadrimestre, en el tercer curs del grau que té l'identificador 7.
--- Retorna un llistat dels professors juntament amb el nom del departament al qual estan vinculats. El llistat ha de retornar quatre columnes, primer cognom, segon cognom, nom i nom del departament. El resultat estarà ordenat alfabèticament de menor a major pels cognoms i el nom.
+SELECT nombre, apellido1, apellido2 FROM universidad.persona WHERE tipo='alumno' ORDER BY nombre, apellido1, apellido2;
+SELECT nombre, apellido1, apellido2 FROM universidad.persona WHERE tipo='alumno' AND telefono IS NULL;
+SELECT * FROM universidad.persona WHERE tipo='alumno' AND YEAR(fecha_nacimiento)=1999;
+SELECT * FROM universidad.persona WHERE tipo='profesor' AND telefono IS NULL AND SUBSTR(nif, 9, 1)='K';
+SELECT * FROM universidad.asignatura WHERE cuatrimestre=1 AND curso=3 AND id_grado=7;
+SELECT apellido1, apellido2, persona.nombre, departamento.nombre AS 'nombre departamento' FROM universidad.persona JOIN universidad.profesor ON persona.id=id_profesor JOIN universidad.departamento ON departamento.id=id_departamento ORDER BY apellido1, apellido2, persona.nombre;
 -- Retorna un llistat amb el nom de les assignatures, any d'inici i any de fi del curs escolar de l'alumne amb nif 26902806M.
 -- Retorna un llistat amb el nom de tots els departaments que tenen professors que imparteixen alguna assignatura en el Grau en Enginyeria Informàtica (Pla 2015).
 -- Retorna un llistat amb tots els alumnes que s'han matriculat en alguna assignatura durant el curs escolar 2018/2019.
