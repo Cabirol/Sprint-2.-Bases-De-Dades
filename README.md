@@ -9,6 +9,7 @@ Entregues de l'sprint 2 del curs de Node.js de Barcelona Activa. MySQL i MongoDB
   - Nivell 2: Youtube
   - Nivell 3: Spotify
 - Entrega 2: MySQL queries
+- Entrega 3: Estructura de Dades - MongoDB
 
 ## Entrega 1: Estructura de Dades - MySQL
 
@@ -16,6 +17,19 @@ Per a cada base de dades ha de pujar-se el següent:
 
 - Model Relacional amb el disseny de la base de dades. Si ho desitges, pots utilitzar draw.io, dbdiagram.io, Mysql Workbench o qualsevol altra eina que et permeti dibuixar l'estructura i exportar-la en format png o jpg (per a pujar-la al repositori). Et recomanem especialment genmymodel.com.
 - Script .sql de creació i càrrega de la base de dades.
+
+Per a verificar que el disseny és correcte, se'ns demana efectuar les següents consultes i comprovar que retornen resultats correctes:
+
+**Optica:**
+
+Llista el total de factures d'un client en un període determinat
+Llista els diferents models d'ulleres que ha venut un empleat durant un any
+Llista els diferents proveïdors que han subministrat ulleres venudes amb èxit per l'òptica
+
+**Pizzeria:**
+
+Llista quants productes de la categoria 'begudes' s'han venut en una determinada localitat
+Llista quantes comandes ha efectuat un determinat empleat
 
 ### Nivell 1, exercici 1: Òptica
 
@@ -193,3 +207,9 @@ Retorna totes les dades de l'alumne més jove.
 
 Retorna un llistat amb els professors que tenen un departament associat i que no imparteixen cap assignatura.
 
+## Entrega 3: Estructura de Dades - MongoDB
+
+Per a cada base de dades (les mateixes que a l'entrega 1) ha de pujar-se el següent:
+
+- Diagrama d'estructura (Model Tree o Model Relationships) amb el disseny de la base de dades. Si ho desitges, pots utilitzar draw.io o qualsevol altra eina que et permeti dibuixar l'estructura i exportar-la en format png o jpg (per a pujar-la al repositori).
+- Script .js de creació i càrrega de la base de dades.
