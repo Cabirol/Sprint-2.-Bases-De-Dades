@@ -89,39 +89,28 @@ CREATE TABLE IF NOT EXISTS beguda (
 
 );
 
-CREATE TABLE IF NOT EXISTS `optica_culdesac`.`ULLERES` (
-  `ulleres_id` INT NOT NULL,
-  `marca_id` INT,
-  `grad_dret` DECIMAL(9,2),
-  `grad_esquerra` DECIMAL(9,2),
-  `montura_tipus` ENUM('F', 'M', 'P') COMMENT 'Tres montures possibles:\nF = Flotant\nM = Metàl·lica\nP = Pasta',
-  `montura_color` VARCHAR(45),
-  `vidres_color` VARCHAR(45),
-  `preu` DECIMAL(9,2),
-  `client_id` INT,
-  `empleat_id` INT,
-  `data_factura` DATE,
-  PRIMARY KEY (`ulleres_id`),
-  FOREIGN KEY (`marca_id`) REFERENCES `MARCA` (`marca_id`),
-  FOREIGN KEY (`client_id`) REFERENCES `CLIENT` (`client_id`),
-  FOREIGN KEY (`empleat_id`) REFERENCES `EMPLEAT` (`empleat_id`)
+CREATE TABLE IF NOT EXISTS comanda (
+  id INT NOT NULL PRIMARY KEY,
+  cliente_id INT,
+  botiga_id INT,
+  hora_comanda DATETIME,
+  tipus ENUM('domicili', 'botiga'),
+  pizza_nombre INT,
+  hamburguesa_nombre INT,
+  beguda_nombre INT,
+  preu_total DECIMAL(4,2),
+  FOREIGN KEY (cliente_id) REFERENCES cliente(id),
+  FOREIGN KEY (botiga_id) REFERENCES botiga(id)
   
 );
 
-INSERT INTO `ADREÇA` VALUES (1, 'Carrer Major', '42B', 'Sobreàtic', '2', '00802', 'Barcelona', 'Espanya');
-INSERT INTO `ADREÇA` VALUES (2, 'Avinguda Principal', '245-247', '1', '3', '08034', 'Barcelona', 'Espanya');
-INSERT INTO `ADREÇA` VALUES (3, 'Carrer Joan Boscà', '52', '5', NULL, '08022', 'Mataró', 'Espanya');
+CREATE TABLE IF NOT EXISTS entregues_domicili (
+id INT NOT NULL PRIMARY KEY,
+empleat_id INT,
+comanda_id INT,
+hora_entrega DATETIME,
+FOREIGN KEY (empleat_id) REFERENCES empleat(id),
+FOREIGN KEY (comanda_id) REFERENCES comanda(id)
 
-INSERT INTO `CLIENT` VALUES (1, 'Miquel Sirvent i Ferrer', '931234567', 'msirvent@mail.com', '2020/08/23', 1, NULL);
-INSERT INTO `CLIENT` VALUES (2, 'Anna Pérez Casasses', '937654321', 'anna_86@mail.com', '2020/11/15', 2, 1);
-
-INSERT INTO `PROVEIDOR` VALUES ('35752258G', 'Focus', '931324354', '931324354', 3);
-
-INSERT INTO `MARCA` VALUES (1, 'Raybon', '35752258G');
-INSERT INTO `MARCA` VALUES (2, 'Veubé', '35752258G');
-
-INSERT INTO `EMPLEAT` VALUES (1, 'Maria Ribes i Casals');
-
-INSERT INTO `ULLERES` VALUES (1, 1, 0.50, 0.50, 'M', 'negre', NULL, 59.99, 1, 1, '2020/08/23');
-INSERT INTO `ULLERES` VALUES (2, 2, -0.75, -1.00, 'F', 'negre', NULL, 67.49, 2, 1, '2020/11/21');
+);
 
