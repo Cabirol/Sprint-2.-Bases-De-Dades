@@ -4,7 +4,7 @@ Aquesta entrega scripts de creació de bases de dades, scripts de queries i mode
 
 ## Base de dades optica_culdesac
 
-- 
+- model-relacional-optica-culdesac.png és la imatge que conté el model relacional de la base de dades.
 - optica_culdesac_schema.sql és l'script de creació i càrrega de la base de dades.
 - Queries-optica_culdesac.sql conté queries sobre la base de dades per a comprovar que funciona.
 
