@@ -1,0 +1,100 @@
+use('optica');
+db.dropDatabase();
+use('optica');
+db.createCollection('ulleres');
+db.ulleres.insertMany(
+    [
+        {
+            marca: {
+                nom: 'Raybon',
+                proveidor: {
+                    nom: 'Focus',
+                    NIF: '35752258G',
+                    telefon: '931324354',
+                    fax: '931324354',
+                    adreca: {
+                        carrer: 'Carrer Joan Boscà',
+                        num: '52',
+                        pis: '5',
+                        porta: '',
+                        codi_postal: '08022',
+                        ciutat: 'Mataró',
+                        pais: 'Espanya'
+                    }
+                }
+            },
+            grad_dret: 0.5,
+            grad_esquerra: 0.5,
+            montura_tipus: 'M',
+            montura_color: 'negre',
+            vidres_color: '',
+            preu: 59.99,
+            client: {
+                nom: 'Miquel Sirvent i Ferrer',
+                telefon: '931234567',
+                email: 'msirvent@gmail.com',
+                data_registre: '2020/08/23',
+                adreca: {
+                    carrer: 'Carrer Major',
+                    num: '42B',
+                    pis: 'Sobreàtic',
+                    porta: '2',
+                    codi_postal: '00802',
+                    ciutat: 'Barcelona',
+                    pais: 'Espanya'
+                },
+                recomanat_per: ''
+            },
+            empleat: {
+                nom: 'Maria Ribes i Casals'
+            },
+            data_factura: '2020/08/23'
+        },
+        {
+            marca: {
+                nom: 'Veubé',
+                proveidor: {
+                    nom: 'Focus',
+                    NIF: '35752258G',
+                    telefon: '931324354',
+                    fax: '931324354',
+                    adreca: {
+                        carrer: 'Carrer Joan Boscà',
+                        num: '52',
+                        pis: '5',
+                        porta: '',
+                        codi_postal: '08022',
+                        ciutat: 'Mataró',
+                        pais: 'Espanya'
+                    }
+                }
+            },
+            grad_dret: -0.75,
+            grad_esquerra: -1,
+            montura_tipus: 'F',
+            montura_color: 'negre',
+            vidres_color: '',
+            preu: 67.49,
+            client: {
+                nom: 'Anna Pérez Casasses',
+                telefon: '937654321',
+                email: 'anna_86@mail.com',
+                data_registre: '2020/11/15',
+                adreca: {
+                    carrer: 'Avinguda Principal',
+                    num: '245-247',
+                    pis: '1',
+                    porta: '3',
+                    codi_postal: '08034',
+                    ciutat: 'Barcelona',
+                    pais: 'Espanya'
+                },
+                recomanat_per: 'Miquel Sirvent i Ferrer'
+            },
+            empleat:  {
+                nom: 'Maria Ribes i Casals'
+            },
+            data_factura: '2020/11/21'
+        }
+    ]
+)

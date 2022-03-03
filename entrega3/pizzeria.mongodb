@@ -1,0 +1,82 @@
+use('pizzeria');
+db.dropDatabase();
+use('pizzeria');
+db.createCollection('cliente');
+db.cliente.insertMany(
+    [
+        {
+            nom: 'Miquel',
+            cognom1: 'Sirvent',
+            cognom2: 'Ferrer',
+            direccio: 'Av. Principal, 245, 1er segona',
+            codi_postal: '08034',
+            telefon: '9312345678',
+            localitat: 'Barcelona',
+            provincia: 'Barcelona',
+            comandes: [
+                {
+                    botiga: {
+                        direccio: 'Carrer Major, 3',
+                        codi_postal: '08023',
+                        localitat: 'Barcelona',
+                        provincia: 'Barcelona'
+                    },
+                    hora_comanda: '2020-01-01 09:10:10',
+                    pizzes: [
+                        {
+                            nom: 'Carbonara',
+                            categoria: 'Massa Fina',
+                            descripcio: 'Molt bona',
+                            preu: 10,
+                            quantitat: 3
+                        }
+                    ],
+                    hamburgueses:[],
+                    begudes: [
+                        {
+                            nom: 'Cervesa',
+                            descripcio: 'Molt refrescant',
+                            preu: 2,
+                            quantitat: 1
+                        }
+                    ],
+                    preu_total: 32,
+                    domicili: {
+                        repartidor: {
+                            nom: 'Clara',
+                            cognom1: 'Montero',
+                            cognom2: 'Oller',
+                            NIF: '34534545G',
+                            telefon: '667858585',
+                        },
+                        hora_entrega: '2020-01-01 10:10:10'
+                    }
+                }
+            ]
+        },
+        {
+            nom: 'Anna',
+            cognom1: 'Pérez',
+            cognom2: 'Casasses',
+            direcció: 'C/Joan Boscà, 52',
+            codi_postal: '08022',
+            telefon: '9387654321',
+            localitat: 'Girona',
+            provincia: 'Girona',
+            comandes: []
+        },
+        {
+            nom: 'Eva',
+            cognom1: 'López',
+            cognom2: 'Sánchez',
+            direcció: 'Av. General, 2, tercer',
+            codi_postal: '08505',
+            telefon: '9311223344',
+            localitat: 'Sant Cugat',
+            provincia: 'Barcelona',
+            comandes: []
+        }
+    ]
+)
+
+
