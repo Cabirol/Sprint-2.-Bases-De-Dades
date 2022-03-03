@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS `optica_culdesac`;
 CREATE SCHEMA IF NOT EXISTS `optica_culdesac`;
 USE `optica_culdesac`;
 
